@@ -1,0 +1,16 @@
+/* Workbench: clearer elevation for a busy board, with its chartreuse project signal. */
+body[data-task="board"] .task-column {
+  border-color: color-mix(in srgb, var(--board-signal, var(--signal)) 18%, var(--rule));
+  box-shadow: 0 8px 24px rgb(18 32 24 / .045);
+  transition: border-color .24s ease, box-shadow .24s ease;
+}
+body[data-task="board"] .task-card {
+  transition: transform .2s cubic-bezier(.2,.75,.25,1), box-shadow .2s ease, border-color .2s ease;
+}
+body[data-task="board"] .task-card:hover,
+body[data-task="board"] .task-card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgb(18 32 24 / .09);
+}
+body.has-gsap[data-task="board"] .project-switching .task-columns { opacity: 1; transform: none; }
+body.has-gsap[data-task="board"] .project-swishing #board-view .task-column { animation: none; }
